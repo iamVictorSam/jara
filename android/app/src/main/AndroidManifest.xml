@@ -1,8 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jara">
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.example.jara_freestyle">
    <application
-        android:label="Jara"
+        android:label="jara_freestyle"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
