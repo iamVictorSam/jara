@@ -88,8 +88,14 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: const BorderSide(color: kGrey),
   );
 }
+
 const OutlineInputBorder koutlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(50)),
-    borderSide: BorderSide(color: Colors.grey, width: 1, style: BorderStyle.solid)
-);
+    gapPadding: 10,
+    borderSide: BorderSide(color: kGrey, width: 1, style: BorderStyle.solid));
 
+const kContainerBackground = Color(0xff657989);
+const kWalletContainerBackgroundG = Color(0xffABA7A7);
+const kContainerBackgroundW = Color(0xffF2F2F2);
+const knotificationButtonColor = Color(0xffC2E0CC);
+const kTextSyleW = TextStyle(color: Colors.white, fontSize: 14);

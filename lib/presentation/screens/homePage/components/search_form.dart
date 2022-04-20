@@ -8,13 +8,18 @@ class SearchForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: TextFormField(
-        onSaved: (value){},
+        onSaved: (value) {},
         decoration: const InputDecoration(
-            filled: true,
-            fillColor: Colors.white54,
-            hintText: "Search Jara",
-            prefixIcon: Icon(Icons.search, color: Colors.grey, size: 33, ),
-            border: koutlineInputBorder,
+          filled: true,
+          fillColor: Colors.white54,
+          hintText: "Search Jara",
+          prefixIcon: Icon(
+            Icons.search,
+            color: kGrey,
+            size: 30,
+          ),
+          contentPadding: EdgeInsets.symmetric(vertical: 7),
+          border: koutlineInputBorder,
           enabledBorder: koutlineInputBorder,
           focusedBorder: koutlineInputBorder,
         ),

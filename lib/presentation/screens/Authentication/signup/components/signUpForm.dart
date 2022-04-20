@@ -7,6 +7,8 @@ import 'package:jara/presentation/screens/Authentication/signIn/signin.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 import 'package:get/get.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({Key? key}) : super(key: key);
@@ -18,12 +20,23 @@ class SignUpForm extends StatefulWidget {
 class _SignUpFormState extends State<SignUpForm> {
   bool isOpen = false;
   bool hasRef = false;
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: formKey,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Column(
         children: [
           TextFormField(
+            validator: (value) {
+              if (value != null && !EmailValidator.validate(value)) {
+                return 'Please enter a valid email';
+              } else {
+                return null;
+              }
+            },
             cursorColor: kBlack,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
@@ -35,6 +48,13 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextFormField(
             keyboardType: TextInputType.visiblePassword,
+            validator: (value) {
+              if (value != null && value.length < 7) {
+                return 'Enter min. 7 character';
+              } else {
+                return null;
+              }
+            },
             decoration: InputDecoration(
               label: const Text('Password'),
               suffixIcon: IconButton(
@@ -137,7 +157,42 @@ class _SignUpFormState extends State<SignUpForm> {
             height: 15.h,
           ),
           DefaultBtn(
-            press: () {},
+            press: () {
+              final isFormValid = formKey.currentState!.validate();
+
+              if (isFormValid) {
+                Get.defaultDialog(
+                    radius: 10,
+                    title: '',
+                    content: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/emailSent.svg',
+                            height: 80.h,
+                          ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          Text(
+                            'Email Sent',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15.sp),
+                          ),
+                          SizedBox(
+                            height: 15.h,
+                          ),
+                          Text(
+                            "You’ve been sent an email with a verification link. Kindly click on the link to verify your login details.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 12.sp),
+                          )
+                        ],
+                      ),
+                    ));
+              }
+            },
             text: 'Sign Up',
             color: kGreenLight,
           ),

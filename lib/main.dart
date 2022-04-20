@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jara/presentation/screens/onboarding/components/splashScreen.dart';
-// import 'package:jara/presentation/screens/settings/settings.dart';
-// import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
-// import 'package:jara/presentation/screens/topUp/topUp.dart';
+import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
+import 'package:jara/presentation/screens/home/home_page.dart';
+import 'package:jara/presentation/screens/topUp/topUp.dart';
+
 import 'presentation/helpers/theme.dart';
+
+bool? seenOnboard;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,8 +28,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Jara',
         theme: theme(),
-        home: const SplashScreen(),
-
       ),
     );
   }

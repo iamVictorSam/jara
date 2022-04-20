@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jara/presentation/helpers/constants.dart';
+import 'package:jara/presentation/screens/profile/profile.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:get/get.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({Key? key}) : super(key: key);
@@ -12,14 +15,24 @@ class SignInForm extends StatefulWidget {
 }
 
 class _SignInFormState extends State<SignInForm> {
-  bool isOpen = false;
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: formKey,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Column(
         children: [
           TextFormField(
             keyboardType: TextInputType.emailAddress,
+            validator: (value) {
+              if (value != null && !EmailValidator.validate(value)) {
+                return 'Please enter a valid email';
+              } else {
+                return null;
+              }
+            },
             decoration: const InputDecoration(
               label: Text('Email address'),
             ),
@@ -29,6 +42,13 @@ class _SignInFormState extends State<SignInForm> {
           ),
           TextFormField(
             keyboardType: TextInputType.visiblePassword,
+            validator: (value) {
+              if (value != null && value.length < 7) {
+                return 'Enter min. 7 character';
+              } else {
+                return null;
+              }
+            },
             decoration: InputDecoration(
               label: const Text('Password'),
               suffixIcon: IconButton(
@@ -45,9 +65,15 @@ class _SignInFormState extends State<SignInForm> {
             height: 30.h,
           ),
           DefaultBtn(
-            press: () {},
+            press: () {
+              final isFormValid = formKey.currentState!.validate();
+
+              if (isFormValid) {
+                Get.to(() => const Profile());
+              }
+            },
             text: 'Confirm',
-            color: kGreenLight,
+            color: kGreen,
           ),
           SizedBox(
             height: 5.h,

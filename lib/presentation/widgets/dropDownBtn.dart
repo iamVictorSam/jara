@@ -6,7 +6,7 @@ import 'package:jara/presentation/helpers/constants.dart';
 
 class DropdownField extends StatelessWidget {
   late final String selectedValue;
-  final String title;
+  final String title, validate;
   final List items;
   final IconData icon;
   final Color iconColor;
@@ -18,6 +18,7 @@ class DropdownField extends StatelessWidget {
     this.title = 'Select',
     this.icon = Icons.arrow_drop_down,
     this.iconColor = kBlack,
+    this.validate = 'Please select Item.',
   }) : super(key: key);
 
   @override
@@ -58,7 +59,7 @@ class DropdownField extends StatelessWidget {
           .toList(),
       validator: (value) {
         if (value == null) {
-          return 'Please select gender.';
+          return validate;
         }
         return null;
       },
