@@ -86,7 +86,7 @@ class _WalletPageBodyState extends State<WalletPageBody> {
                             "45, 000",
                             style: kTextSyleW,
                           ),
-                          Image.asset('images/j points.png')
+                          Image.asset('assets/j points.png')
                         ],
                       ),
                     ),
@@ -144,7 +144,7 @@ class _WalletPageBodyState extends State<WalletPageBody> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0, bottom: 14),
-              child: Center(child: Image.asset('images/wal icon.png')),
+              child: Center(child: Image.asset('assets/wal icon.png')),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

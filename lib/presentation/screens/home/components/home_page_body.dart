@@ -45,7 +45,10 @@ class _HomePageBodyState extends State<HomePageBody> {
                     padding: const EdgeInsets.all(8.0),
                     child: CategoriesBtn(
                       press: () {},
-                      image: SvgPicture.asset(cateIcons[i]),
+                      image: SvgPicture.asset(
+                        'assets/' + cateIcons[i],
+                        height: 20.h,
+                      ),
                       title: cateName[i],
                     ),
                   ),
@@ -76,7 +79,10 @@ class _HomePageBodyState extends State<HomePageBody> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      const Expanded(child: TitledImageCard()),
+                      const Expanded(
+                          child: TitledImageCard(
+                        image: 'assets/surfer.png',
+                      )),
                       SizedBox(
                         width: 10.h,
                       ),
@@ -85,13 +91,17 @@ class _HomePageBodyState extends State<HomePageBody> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             const Expanded(
-                              child: TitledImageCard(),
+                              child: TitledImageCard(
+                                image: 'assets/spa.png',
+                              ),
                             ),
                             SizedBox(
                               height: 10.h,
                             ),
                             const Expanded(
-                              child: TitledImageCard(),
+                              child: TitledImageCard(
+                                image: 'assets/food1.png',
+                              ),
                             ),
                           ],
                         ),

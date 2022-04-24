@@ -28,7 +28,7 @@ class _SetupState extends State<Setup> {
         ),
         // appBarTheme:AppBarTheme(),
       ),
-      body: Container(child: EditSettings()),
+      body: EditSettings(),
     );
   }
 }

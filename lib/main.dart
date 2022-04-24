@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
 import 'package:jara/presentation/screens/home/home_page.dart';
+import 'package:jara/presentation/screens/onboarding/components/splashScreen.dart';
 import 'package:jara/presentation/screens/topUp/topUp.dart';
+import 'package:jara/presentation/widgets/bottom_nav.dart';
 
 import 'presentation/helpers/theme.dart';
 
@@ -25,10 +27,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: false,
       builder: () => GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Jara',
-        theme: theme(),
-      ),
+          debugShowCheckedModeBanner: false,
+          title: 'Jara',
+          theme: theme(),
+          home: BottomNav()),
     );
   }
 }

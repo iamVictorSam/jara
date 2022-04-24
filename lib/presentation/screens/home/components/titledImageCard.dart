@@ -4,8 +4,10 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:jara/presentation/helpers/constants.dart';
 
 class TitledImageCard extends StatelessWidget {
+  final String image;
   const TitledImageCard({
     Key? key,
+    required this.image,
   }) : super(key: key);
 
   @override
@@ -13,17 +15,12 @@ class TitledImageCard extends StatelessWidget {
     return Container(
       // width: ,
       decoration: BoxDecoration(
-          image: const DecorationImage(
+          image: DecorationImage(
               image: AssetImage(
-                'assets/surfer.png',
+                image,
               ),
               fit: BoxFit.cover),
           borderRadius: BorderRadius.circular(20)),
-      child: Container(
-        height: 10,
-        color: kGrey,
-        // child: Text('title'),
-      ),
     );
   }
 }

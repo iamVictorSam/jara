@@ -31,7 +31,7 @@ class _SetWalletPinState extends State<SetWalletPin> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 60.0, bottom: 10),
-                child: Image.asset('images/pin logo.png'),
+                child: Image.asset('assets/pin logo.png'),
               ),
               const Text(
                 "Setup wallets pin",

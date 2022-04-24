@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jara/presentation/screens/homePage/homePage.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
 import 'package:jara/presentation/helpers/constants.dart';
 import 'package:get/get.dart';
+
+import '../../../home/home_page.dart';
 
 class InviteSent extends StatefulWidget {
   const InviteSent({Key? key}) : super(key: key);

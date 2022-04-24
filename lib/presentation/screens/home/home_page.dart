@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jara/presentation/screens/homePage/components/search_form.dart';
+import 'package:jara/presentation/widgets/search_form.dart';
 import '../search/component/search_deals.dart';
 import 'components/home_page_body.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: HomePageBody(),
+      body: const HomePageBody(),
     );
   }
 }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:jara/presentation/helpers/constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jara/presentation/screens/home/home_page.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:jara/presentation/widgets/dropDownBtn.dart';
+import 'package:get/get.dart';
 
 class ProfileBody extends StatefulWidget {
   const ProfileBody({Key? key}) : super(key: key);
@@ -118,7 +120,7 @@ class _ProfileBodyState extends State<ProfileBody> {
               ),
               TextFormField(
                 validator: (value) {
-                  if (value != null) {
+                  if (value == null) {
                     return 'Please enter a valid response';
                   } else {
                     return null;
@@ -134,10 +136,12 @@ class _ProfileBodyState extends State<ProfileBody> {
                 press: () {
                   final isFormValid = formKey.currentState!.validate();
 
-                  if (isFormValid) {}
+                  if (isFormValid) {
+                    Get.offAll(() => const HomePage());
+                  }
                 },
                 text: 'Save',
-                color: kGreenLight,
+                color: kGreen,
               ),
               SizedBox(
                 height: 20.h,

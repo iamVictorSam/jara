@@ -25,7 +25,7 @@ class _DealsBodyState extends State<DealsBody> {
                   height: 300,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('images/Rectangle 997.png'),
+                        image: AssetImage('assets/Rectangle 997.png'),
                         fit: BoxFit.fill),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(10),
@@ -422,11 +422,11 @@ class _DealsBodyState extends State<DealsBody> {
                           children: [
                             const Text('Pay with: '),
                             Image.asset(
-                              'images/card icon.png',
+                              'assets/card icon.png',
                             ),
-                            Image.asset('images/jara points.png'),
-                            Image.asset('images/wallet.png'),
-                            Image.asset('images/qr code.png'),
+                            Image.asset('assets/jara points.png'),
+                            Image.asset('assets/wallet.png'),
+                            Image.asset('assets/qr code.png'),
                           ],
                         ),
                       ),
@@ -435,15 +435,15 @@ class _DealsBodyState extends State<DealsBody> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
-                            child: Image.asset('images/paypal logo.png'),
+                            child: Image.asset('assets/paypal logo.png'),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
-                            child: Image.asset('images/flutter wave logo.png'),
+                            child: Image.asset('assets/flutter wave logo.png'),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
-                            child: Image.asset('images/visa logo.png'),
+                            child: Image.asset('assets/visa logo.png'),
                           ),
                         ],
                       ),
