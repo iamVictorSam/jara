@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jara/presentation/helpers/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jara/presentation/screens/deals/deals.dart';
-import 'package:jara/presentation/screens/home/home_page.dart';
-import 'package:jara/presentation/screens/settings/settings.dart';
-import 'package:jara/presentation/screens/topUp/topUp.dart';
-import 'package:jara/presentation/screens/wallets/wallet_page.dart';
+import 'package:jara/presentation/screens/Customer/topUp/topUp.dart';
+import 'package:jara/presentation/screens/Customer/deals/deals.dart';
+import 'package:jara/presentation/screens/Customer/home/home_page.dart';
+import 'package:jara/presentation/screens/Customer/settings/settings.dart';
+import 'package:jara/presentation/screens/Customer/wallets/wallet_page.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);

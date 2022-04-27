@@ -46,6 +46,6 @@ AppBarTheme appBarTheme() {
     ),
     centerTitle: true,
     elevation: 0,
-    iconTheme: IconThemeData(color: kGreen),
+    iconTheme: const IconThemeData(color: kGreen),
   );
 }
