@@ -82,6 +82,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                       const Expanded(
                           child: TitledImageCard(
                         image: 'assets/surfer.png',
+                        title: 'Entertainment',
                       )),
                       SizedBox(
                         width: 10.h,
@@ -93,6 +94,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                             const Expanded(
                               child: TitledImageCard(
                                 image: 'assets/spa.png',
+                                title: 'Beauty & Spa',
                               ),
                             ),
                             SizedBox(
@@ -101,6 +103,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                             const Expanded(
                               child: TitledImageCard(
                                 image: 'assets/food1.png',
+                                title: 'Food & Drink',
                               ),
                             ),
                           ],

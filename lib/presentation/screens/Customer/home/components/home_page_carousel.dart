@@ -37,19 +37,19 @@ class HomePageCarousel extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Text('data'),
-                    ColorBox(
-                      itemList: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Text(
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: ColorBox(
+                        itemList: [
+                          Text(
                             '55% OFF',
                             style: TextStyle(
                                 fontSize: 8.sp,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     Spacer(),
                     Row(

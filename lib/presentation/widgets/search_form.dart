@@ -2,25 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jara/presentation/helpers/constants.dart';
 
 class SearchForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          border: const Border(
-            bottom: BorderSide(width: 1),
-            top: BorderSide(width: 1),
-            left: BorderSide(width: 1),
-            right: BorderSide(width: 1),
-          )),
       alignment: Alignment.centerLeft,
       child: TextFormField(
         onSaved: (value) {},
         decoration: InputDecoration(
           filled: true,
+          contentPadding: EdgeInsets.symmetric(vertical: 5),
           border: InputBorder.none,
           fillColor: Colors.white54,
           hintText: "Search Jara",
@@ -29,6 +22,16 @@ class SearchForm extends StatelessWidget {
             icon: const Icon(
               Icons.search,
             ),
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(50),
+              borderSide: BorderSide(color: kGrey)),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50),
+            borderSide: BorderSide(color: kGrey),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50),
           ),
         ),
         textAlign: TextAlign.start,

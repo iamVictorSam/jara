@@ -19,8 +19,9 @@ class DefaultBtn extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
+        padding: EdgeInsets.symmetric(vertical: 15.h),
         width: double.infinity,
-        height: 55.h,
+        // height: 55.h,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(5),
@@ -30,7 +31,7 @@ class DefaultBtn extends StatelessWidget {
               style: TextStyle(
                   color: textColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: 14.sp)),
+                  fontSize: 13.sp)),
         ),
       ),
     );

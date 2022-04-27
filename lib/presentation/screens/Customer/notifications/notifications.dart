@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jara/presentation/screens/Customer/wallets/components/transaction_card.dart';
+import 'package:jara/presentation/widgets/dropDownBtn.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'component/notifications_body.dart';
 
@@ -39,37 +42,25 @@ class _NotificationsState extends State<Notifications> {
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
-                  Container(
-                    height: 30,
-                    width: 120,
-                    alignment: Alignment.centerRight,
-                    padding: const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(7),
-                      border: const Border(
-                        right: BorderSide(width: 1, color: Colors.black),
-                        left: BorderSide(width: 1, color: Colors.black),
-                        top: BorderSide(width: 1, color: Colors.black),
-                        bottom: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        Text('Last 30 days'),
-                        Icon(Icons.arrow_drop_down),
-                      ],
-                    ),
+                  SizedBox(
+                    width: 30.w,
+                  ),
+                  Expanded(
+                    child: DropdownField(
+                        selectedValue: 'selectedValue',
+                        items: ['Last year', 'Last 20 days']),
                   ),
                 ],
               ),
-              NotificationsBody(),
-              NotificationsBody(),
-              NotificationsBody(),
-              NotificationsBody(),
-              NotificationsBody(),
-              NotificationsBody(),
-              NotificationsBody(),
+              const SizedBox(
+                height: 20,
+              ),
+              ...List.generate(
+                  5,
+                  (index) => const Padding(
+                        padding: EdgeInsets.only(bottom: 15.0),
+                        child: TransactionCard(),
+                      ))
             ],
           ),
         ),

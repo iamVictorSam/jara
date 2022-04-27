@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:jara/presentation/screens/Customer/notifications/notifications.dart';
 import 'package:jara/presentation/widgets/search_form.dart';
 import '../search/component/search_deals.dart';
 import 'components/home_page_body.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,7 +31,9 @@ class HomePage extends StatelessWidget {
               'assets/notification.svg',
             ),
             iconSize: 50,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => Notifications());
+            },
           ),
         ],
       ),

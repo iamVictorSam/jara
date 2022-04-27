@@ -26,7 +26,7 @@ class DropdownField extends StatelessWidget {
     return DropdownButtonFormField2(
       decoration: InputDecoration(
         isDense: true,
-        contentPadding: EdgeInsets.zero,
+        contentPadding: EdgeInsets.symmetric(vertical: 5.h),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -42,7 +42,7 @@ class DropdownField extends StatelessWidget {
         color: iconColor,
       ),
       iconSize: 30,
-      buttonHeight: 60,
+      buttonHeight: 40,
       buttonPadding: const EdgeInsets.only(left: 20, right: 10),
       dropdownDecoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),

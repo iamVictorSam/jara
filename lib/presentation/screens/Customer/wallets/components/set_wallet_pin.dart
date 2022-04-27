@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jara/presentation/helpers/constants.dart';
+import 'package:jara/presentation/widgets/defaultBtn.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SetWalletPin extends StatefulWidget {
   @override
@@ -23,7 +27,7 @@ class _SetWalletPinState extends State<SetWalletPin> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -40,46 +44,44 @@ class _SetWalletPinState extends State<SetWalletPin> {
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 10.0),
-                child: Text(
-                  "Input the 4- digit code you wish to use for your Wallets pin in order to secure your account",
-                  textAlign: TextAlign.center,
-                ),
+              SizedBox(
+                height: 20.h,
               ),
-              PinCodeTextField(
-                appContext: context,
-                length: 4,
-                onChanged: (value) {},
-                autoFocus: true,
-                controller: _textEditingController,
-                pinTheme: PinTheme(activeColor: Colors.green),
-                onCompleted: (value) {
-                  print(_textEditingController);
-                },
+              Text(
+                "Input the 4-digit code you wish to use for your Wallets pin again to confirm.",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13.sp),
+              ),
+              SizedBox(
+                height: 50.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Center(
-                  child: Container(
-                    width: 300,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Confirm',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                padding: const EdgeInsets.all(8.0),
+                child: PinCodeTextField(
+                  obscureText: true,
+                  obscuringWidget: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/*.svg'),
                   ),
+                  appContext: context,
+                  length: 4,
+                  onChanged: (value) {},
+                  autoFocus: true,
+                  controller: _textEditingController,
+                  pinTheme: PinTheme(activeColor: Colors.green),
+                  onCompleted: (value) {
+                    print(_textEditingController);
+                  },
                 ),
               ),
+              SizedBox(
+                height: 20.h,
+              ),
+              DefaultBtn(
+                press: () {},
+                color: kGreen,
+                text: 'Confirm',
+              )
             ],
           ),
         ),

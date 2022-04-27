@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jara/presentation/screens/Customer/wallets/bank_tranfer/bank_tranfer.dart';
+import 'package:jara/presentation/screens/Customer/wallets/components/set_wallet_pin.dart';
 import 'package:jara/presentation/screens/Customer/wallets/myCards/myCards.dart';
+import 'package:jara/presentation/screens/Customer/wallets/wallet_topup/components/body.dart';
+import 'package:jara/presentation/screens/Customer/wallets/wallet_topup/wallet_topup.dart';
 
 class WalletSettingBody extends StatefulWidget {
   @override
@@ -40,17 +44,30 @@ class _WalletSettingBodyState extends State<WalletSettingBody> {
                             content: Column(
                               children: [
                                 AlertTextBtn(
-                                    data: 'Top-Up Funds wallet', press: () {}),
+                                    data: 'Top-Up Funds wallet',
+                                    press: () {
+                                      Get.back();
+                                      Get.to(() => WalletTopUp());
+                                    }),
                                 const Divider(),
                                 AlertTextBtn(
-                                    data: 'Wallets Transfers', press: () {}),
+                                    data: 'Wallets Transfers',
+                                    press: () {
+                                      Get.back();
+                                      Get.to(() => WalletTransfer());
+                                    }),
                                 const Divider(),
                                 AlertTextBtn(
-                                    data: 'Setup Wallets pin', press: () {}),
+                                    data: 'Setup Wallets pin',
+                                    press: () {
+                                      Get.back();
+                                      Get.to(() => SetWalletPin());
+                                    }),
                                 const Divider(),
                                 AlertTextBtn(
                                     data: 'Add bank card',
                                     press: () {
+                                      Get.back();
                                       Get.to(() => (const MyCardScreen()));
                                     }),
                               ],
